@@ -5,17 +5,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Created by user on 6/8/17.
- */
+
 @WebServlet(name = "LogoutServlet", urlPatterns = "/logout")
+
 public class LogoutServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    protected void   doPost  (HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
 
     }
+    protected void   doGet  (HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
+        request.getSession().removeAttribute("username");
+        request.getSession().invalidate();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    request.getSession().invalidate();
         response.sendRedirect("/login");
     }
-}
+} //end pub class
