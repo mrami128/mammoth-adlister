@@ -1,8 +1,5 @@
 import java.util.List;
 
-/**
- * Created by user on 6/9/17.
- */
 public class MySQLAdsDao implements Ads {
     @Override
     public List<Ad> all() {
