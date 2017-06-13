@@ -22,7 +22,6 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error connecting to the database!", e);
         }
     }
-
     @Override
     public List<Ad> all() {
         PreparedStatement stmt = null;
@@ -34,6 +33,7 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
+//this insert method gets /uses user input -so apply prepared statement
 
     @Override
     public Long insert(Ad ad) {
@@ -55,6 +55,7 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error creating a new ad.", e);
         }
     }
+    // BEN helped me with this test
     @Override
     public Ad getAdById(long id){
         String query = "Select * from ads where id = ?";
@@ -76,10 +77,11 @@ public class MySQLAdsDao implements Ads {
             return null;
         }
     }
-
     private String createInsertQuery() {
         return "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
     }
+
+// this result -extractAd- set gets dbase info--changes format--no prepared stmnt need here
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(

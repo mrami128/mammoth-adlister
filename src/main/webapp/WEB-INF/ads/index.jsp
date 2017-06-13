@@ -14,6 +14,9 @@
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
+
+<%--TODO: replace this ones with c:out--%>
+
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
         </div>

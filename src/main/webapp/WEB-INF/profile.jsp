@@ -9,6 +9,8 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
     <div class="container">
+
+        <%--TODO: use c:out here because its user input generating this --%>
         <h1>Welcome, ${sessionScope.user}!</h1>
     </div>
 
