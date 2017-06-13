@@ -10,8 +10,11 @@
 
     <div class="container">
 
-        <%--TODO: use c:out here because its user input generating this --%>
-        <h1>Welcome, ${sessionScope.user}!</h1>
+        <%--TODO: done added.. use c:out here because its user input generating this --%>
+
+        <h1>Welcome,
+            <c:out value="${sessionScope.user.username}"/>!</h1>
+            <%--  ${sessionScope.user}!</h1>  --%>
     </div>
 
 </body>

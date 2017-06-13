@@ -8,9 +8,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
+    <jsp:include page="/WEB-INF/partials/head.jsp">
+        <jsp:param name="title" value="Your Profile" />
+    </jsp:include>
+
     <title>Title</title>
 </head>
+
 <body>
+<%--todo: incl jsp navbar--%>
+
+<%--todo: do in bootstrap  add form a button for register--%>
 
 </body>
 </html>

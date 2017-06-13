@@ -9,9 +9,9 @@ import java.util.List;
 public class MySQLAdsDao implements Ads {
     private Connection connection = null;
 
-    public MySQLAdsDao() {
+    public MySQLAdsDao(Config config) {
         try {
-            Config config = new Config();
+            //Config config = new Config();
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
                 config.getUrl(),

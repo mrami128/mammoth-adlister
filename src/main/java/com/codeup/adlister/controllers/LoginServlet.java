@@ -22,12 +22,14 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         // TODO: find a record in your database that matches the submitted password
+
         // TODO: make sure we find a user with that username
+
         // TODO: check the submitted password against what you have in your database
         boolean validAttempt = false;
 
         if (validAttempt) {
-            // TODO: store the logged in user object in the session, instead of just the username
+            // TODO: store the logged in user object in the session, instead of just the username--inst pass just user
             request.getSession().setAttribute("user", username);
             response.sendRedirect("/profile");
         } else {
