@@ -1,15 +1,17 @@
 
 public class Config {
 
-private String url;
-private String user;
-private String password;
+private final String user = "adlister_user" ;
+private final String password = "password";
+private final String url = "jdbc:mysql://localhost/adlister_db?serverTimezone=UTC";
 
-//constructor
+   //constructor
     public Config() {
-        this.url = "jdbc:mysql://localhost:3306/adlister_db?serverTimezone=UTC";
-        this.user = "adlister_user";
-        this.password = "password";
+
+
+//        this.url = "jdbc:mysql://localhost:3306/adlister_db?serverTimezone=UTC";
+//        this.user = "adlister_user";
+//        this.password = "password";
     }
 
 // 3 getters
