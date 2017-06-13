@@ -33,16 +33,15 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
-//this insert method gets /uses user input -so apply prepared statement
+//TODO: this insert method gets /uses user input -so apply prepared statement
 
     @Override
     public Long insert(Ad ad) {
         try {
-            PreparedStatement stmt = connection.prepareStatement(createInsertQuery(), Statement.RETURN_GENERATED_KEYS);
+            String insert ="INSERT INTO ads(user_id, title,description)VALUES(?,?,?)";
 
-            stmt.setLong(1, ad.getUserId());
-            stmt.setString(2, ad.getTitle());
-            stmt.setString(3, ad.getDescription());
+            PreparedStatement stmt = connection.prepareStatement
+                    (insert, Statement.RETURN_GENERATED_KEYS);
 
             stmt.executeUpdate();
 
